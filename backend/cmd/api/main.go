@@ -67,8 +67,13 @@ func main() {
 	log.Println("✅ Server exited successfully")
 }
 
-func setupRouter() *gin.Engine {
-	router := gin.Default()
+func setupRouter(authHandler *handlers.AuthHandler, authMiddleware *middleware.AuthMiddleware) *gin.Engine {
+	router := gin.New()
+
+	// Apply middleware
+	router.Use(middleware.Logger())
+	router.Use(gin.Recovery())
+	router.Use(middleware.CORS())
 
 	// Health check endpoint
 	router.GET("/health", func(c *gin.Context) {
@@ -81,7 +86,6 @@ func setupRouter() *gin.Engine {
 
 	// Ready check endpoint
 	router.GET("/ready", func(c *gin.Context) {
-		// TODO: Add database connectivity checks
 		c.JSON(http.StatusOK, gin.H{
 			"status": "ready",
 		})
@@ -90,21 +94,32 @@ func setupRouter() *gin.Engine {
 	// API v1 group
 	v1 := router.Group("/api/v1")
 	{
-		// TODO: Add routes here
 		v1.GET("/", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"message": "FindMe API v1",
 				"docs":    "/api/v1/docs",
 			})
 		})
+
+		// Auth routes (public)
+		auth := v1.Group("/auth")
+		{
+			auth.POST("/register", authHandler.Register)
+			auth.POST("/login", authHandler.Login)
+			auth.POST("/refresh", authHandler.RefreshToken)
+			auth.GET("/verify-email", authHandler.VerifyEmail)
+			auth.POST("/password-reset/request", authHandler.RequestPasswordReset)
+			auth.POST("/password-reset/reset", authHandler.ResetPassword)
+		}
+
+		// Protected routes
+		protected := v1.Group("/")
+		protected.Use(authMiddleware.RequireAuth())
+		{
+			protected.GET("/profile", authHandler.GetProfile)
+			// TODO: Add more protected routes
+		}
 	}
 
 	return router
-}
-
-func getEnv(key, defaultValue string) string {
-	if value := os.Getenv(key); value != "" {
-		return value
-	}
-	return defaultValue
 }
