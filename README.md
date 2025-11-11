@@ -1,4 +1,4 @@
-# ❤️ FindMe
+# ❤️ OneLove
 
 > Find your love with verified people and authentic video profiles - no filters, just real connections.
 
@@ -10,9 +10,9 @@
 
 ## 🌟 About
 
-**FindMe** is a revolutionary AI-powered dating platform that brings authenticity back to online dating. Through verified video profiles and intelligent matching, we help you connect with real people looking for meaningful relationships.
+**OneLove** is a revolutionary AI-powered dating platform that brings authenticity back to online dating. Through verified video profiles and intelligent matching, we help you connect with real people looking for meaningful relationships.
 
-### The FindMe Difference
+### The OneLove Difference
 
 - **🎥 Video-First Profiles**: No photos, no filters - just authentic video introductions
 - **✅ Verified Users**: Every profile is verified to ensure genuine connections
@@ -23,7 +23,7 @@
 
 ## 🏗️ Architecture
 
-FindMe is built with a modern, scalable architecture:
+OneLove is built with a modern, scalable architecture:
 
 ```
 ┌─────────────────┐
@@ -85,8 +85,8 @@ FindMe is built with a modern, scalable architecture:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/findme.git
-   cd findme
+   git clone https://github.com/yourusername/OneLove.git
+   cd OneLove
    ```
 
 2. **Set up environment variables**
@@ -119,11 +119,11 @@ For detailed setup instructions, see [SETUP.md](docs/SETUP.md).
 - **[API Documentation](docs/API.md)** - Backend API reference
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment instructions
 - **[Migration Guide](docs/MIGRATION.md)** - Database migration and schema management
-- **[Contributing](CONTRIBUTING.md)** - How to contribute to FindMe
+- **[Contributing](CONTRIBUTING.md)** - How to contribute to OneLove
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! FindMe is free and open source, and we believe in building great software together.
+We welcome contributions from the community! OneLove is free and open source, and we believe in building great software together.
 
 Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
@@ -156,14 +156,14 @@ This project is licensed under a Commercial License - see the [LICENSE](LICENSE)
 
 ## 🌐 Community
 
-- **Website**: [findme.ai](https://findme.ai)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/findme/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/findme/discussions)
+- **Website**: [OneLove.ai](https://OneLove.ai)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/OneLove/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/OneLove/discussions)
 
 ## 💖 Acknowledgments
 
-Built with love by the FindMe community. Special thanks to all our contributors who believe in authentic connections.
+Built with love by the OneLove community. Special thanks to all our contributors who believe in authentic connections.
 
 ---
 
-**Made with ❤️ by the FindMe Team**
+**Made with ❤️ by the OneLove Team**
